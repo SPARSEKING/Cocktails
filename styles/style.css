@@ -33,3 +33,16 @@
     transition: all 1s cubic-bezier(0.03, 0.98, 0.52, 0.99);
     outline: none;
 }
+
+.new-card {
+    width: 400px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.name {
+    color: black;
+    text-align: center;
+}
+
