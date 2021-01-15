@@ -25,34 +25,11 @@ class HashStorage {
             
             return delete this.storage[key]
         }
-        
     }
 
     getKeys() {
         return Object.keys(this.storage)
     }
-}
-
-function cocktailCard(name, isAlcohol, ingredients, recipe) {
-    const newCard = document.createElement('div');
-    newCard.classList.add('new-card');
-    const cocktailsContainer = document.querySelector('cocktails-container');
-    cocktailsContainer.append(newCard)
-    const title = document.createElement('h3');
-    title.classList.add('name');
-    title.innerHTML = name;
-    newCard.append(title);
-    const alcohol = document.createElement('h4');
-    alcohol.classList.add('alcohol');
-    alcohol.innerHTML = `Алкогольный: ${isAlcohol}`;
-    newCard.append(alcohol);
-    const params = document.createElement('h4');
-    params.innerHTML = 'Ингредиенты: ';
-    params.innerHTML = ingredients;
-    newCard.append(params);
-    const sheme = document.createElement('p');
-    sheme.innerHTML = recipe;
-    newCard.append(sheme);
 }
 
 const cocktailsStorage = new HashStorage();
@@ -69,8 +46,6 @@ addButton.addEventListener('click', () => {
 getButton.addEventListener('click', () => {
     const name = window.prompt('Введите название коктейля');
     console.log('Cocktail was added', cocktailsStorage.getValue(name));
-    let res = cocktailsStorage.getValue(name);
-    cocktailCard(res['name'], res['isAlcohol'], res['ingredients'], res['recipe']);
 })
 
 deleteButton.addEventListener('click', () => {
